@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Web Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="browser">
+        <div class="toolbar">
+            <button onclick="goBack()">Back</button>
+            <button onclick="goForward()">Forward</button>
+            <button onclick="reloadPage()">Reload</button>
+            <button onclick="stopLoading()">Stop</button>
+            <button onclick="goHome()">Home</button>
+            <button onclick="addBookmark()">Add Bookmark</button>
+            <button onclick="openSettings()">Settings</button>
+            <button onclick="toggleIncognito()">Incognito Mode</button>
+        </div>
+        <div class="address-bar">
+            <input type="text" id="url" placeholder="Enter URL or Search">
+            <button onclick="navigate()">Go</button>
+        </div>
+        <iframe id="webview" src="about:blank"></iframe>
+        <div class="bookmarks">
+            <h3>Bookmarks</h3>
+            <ul id="bookmark-list"></ul>
+        </div>
+        <div class="history">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+        </div>
+        <div class="downloads">
+            <h3>Downloads</h3>
+            <ul id="download-list"></ul>
+        </div>
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSettings()">&times;</span>
+                <h3>Settings</h3>
+                <div class="setting-item">
+                    <label for="home-page-url">Home Page URL:</label>
+                    <input type="text" id="home-page-url">
+                    <button onclick="saveHomePage()">Save</button>
+                </div>
+                <div class="setting-item">
+                    <label for="user-agent">User Agent:</label>
+                    <input type="text" id="user-agent">
+                    <button onclick="saveUserAgent()">Save</button>
+                </div>
+                <div class="setting-item">
+                    <label for="download-path">Download Path:</label>
+                    <input type="text" id="download-path">
+                    <button onclick="saveDownloadPath()">Save</button>
+                </div>
+                <div class="setting-item">
+                    <button onclick="clearHistory()">Clear History</button>
+                </div>
+                <div class="setting-item">
+                    <button onclick="clearBookmarks()">Clear Bookmarks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
